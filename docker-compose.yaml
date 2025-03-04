@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  confluent-platform:
+    image: shinzhang124/cp-all-in-one:7.9.0
+    container_name: confluent-platform
+    ports:
+      - "9021:9021"
+      - "9092:9092"
+      - "8081:8081"
+      - "8083:8083"
+      - "9001:9001"
+    restart: always
+
+  http-request-log-service:
+    image: shinzhang124/http-request-log-service:1.0
+    container_name: http-request-log-service
+    ports:
+      - "3000:3000"
+    restart: always
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: passwd
+      POSTGRES_DB: testdb
+    ports:
+      - "5432:5432"
+    restart: always
