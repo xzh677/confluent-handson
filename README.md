@@ -8,11 +8,12 @@ This repository provides a **Docker Compose** setup for running a **Confluent Pl
 - Provides a **single-broker** Kafka setup with essential components like **Zookeeper, Kafka Broker, Schema Registry, Kafka Connect, ksqlDB, and Control Center**.
 - **Supervisor Web UI** available on port **9001**.
 - **Image:** [shinzhang124/cp-all-in-one](https://hub.docker.com/r/shinzhang124/cp-all-in-one)
+- Please note: you can also consider the Confluent's all in one docker compose: [https://github.com/confluentinc/cp-all-in-one/blob/7.9.0-post/cp-all-in-one-kraft/docker-compose.yml](https://github.com/confluentinc/cp-all-in-one/blob/7.9.0-post/cp-all-in-one-kraft/docker-compose.yml) if you have sufficient storage and memory.
 
 ### 2️⃣ HTTP Request Log Service
 - Logs incoming HTTP requests and allows you to inspect request details via a web UI or API.
-- **Web UI:** Accessible on **http://localhost:3000**.
-- **API Docs:** Available at **http://localhost:3000/api/v1/docs**.
+- **Web UI:** Accessible on http://localhost:3000.
+- **API Docs:** Available at http://localhost:3000/api/v1/docs.
 - **Image:** [shinzhang124/http-request-log-service](https://hub.docker.com/r/shinzhang124/http-request-log-service)
 
 ### 3️⃣ PostgreSQL Database
