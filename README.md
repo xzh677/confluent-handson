@@ -56,18 +56,18 @@ docker compose version
 
 1. **Clone this repository:**
    ```sh
-   git clone <your-repo-url>
-   cd <your-repo-folder>
+   git clone https://github.com/xzh677/confluent-handson.git
+   cd confluent-handson
    ```
 
 2. **Start all services:**
    ```sh
-   docker compose up -d
+   sudo docker compose up -d
    ```
 
 3. **Verify running containers:**
    ```sh
-   docker ps
+   sudo docker ps
    ```
 
 4. **Access the services:**
@@ -95,21 +95,21 @@ docker compose version
 ## 🛑 Stopping Services
 To stop and remove all containers:
 ```sh
-docker compose down
+sudo docker compose down
 ```
 
 ## 📌 Useful Commands
 - **View logs for a service:**
   ```sh
-  docker compose logs -f <service_name>
+  sudo docker compose logs -f <service_name>
   ```
 - **Restart a specific service:**
   ```sh
-  docker compose restart <service_name>
+  sudo docker compose restart <service_name>
   ```
 - **Enter a running container:**
   ```sh
-  docker exec -it <container_name> /bin/sh
+  sudo docker exec -it <container_name> /bin/sh
   ```
 
 ## 🔗 Additional Resources
