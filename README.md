@@ -74,6 +74,10 @@ docker compose version
    - **Confluent Control Center:** [http://localhost:9021](http://localhost:9021)
    - **HTTP Request Log Service:** [http://localhost:3000](http://localhost:3000)
    - **PostgreSQL:** Connect via `postgres://user:passwd@localhost:5432/testdb`
+     ```
+     sudo docker exec -it postgres psql -h postgres -U user -d testdb
+     ```
+     You can type in password `passwd`
 
 ## 📡 Connecting Services
 
