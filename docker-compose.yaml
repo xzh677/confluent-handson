@@ -9,6 +9,7 @@ services:
       - "9092:9092"
       - "8081:8081"
       - "8083:8083"
+      - "8088:8088"
       - "9001:9001"
     restart: always
 
@@ -24,8 +25,8 @@ services:
     container_name: postgres
     environment:
       POSTGRES_USER: user
-      POSTGRES_PASSWORD: passwd
-      POSTGRES_DB: testdb
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
     ports:
       - "5432:5432"
     restart: always
