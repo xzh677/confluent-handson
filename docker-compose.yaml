@@ -25,8 +25,8 @@ services:
     container_name: postgres
     environment:
       POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydatabase
+      POSTGRES_PASSWORD: passwd
+      POSTGRES_DB: testdb
     ports:
       - "5432:5432"
     restart: always
