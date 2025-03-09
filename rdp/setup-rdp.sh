@@ -8,6 +8,10 @@ sudo apt install -y ubuntu-desktop
 
 # Install and configure xRDP for remote desktop access
 sudo apt install -y xrdp
+
+sudo chown xrdp:xrdp /etc/xrdp/key.pem
+sudo chmod 600 /etc/xrdp/key.pem
+
 sudo systemctl enable --now xrdp
 
 # Set a password for the user (modify as needed)
