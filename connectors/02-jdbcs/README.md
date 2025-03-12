@@ -41,6 +41,9 @@ sudo docker ps
 **Step 3:** Access PostgreSQL via DBeaver.
 - Connect using `localhost:5432`, user `user`, password `passwd`, database `postgres`.
 - Create a database named `jdbctest`.
+```sql
+create database jdbctest;
+```
 - Then disconnect from the session.
 - Reconnect using `localhost:5432`, user `user`, password `passwd`, database `jdbctest`.
 
