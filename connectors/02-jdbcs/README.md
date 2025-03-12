@@ -151,7 +151,9 @@ update userprofiles u set name = 'Alice' where id =1;
 ```
 
 **Step 7:** What if you delete one of the existing record?
-
+```
+delete from userprofiles where id = 1;
+```
 ---
 
 ### **3. Deleting the Connector**
@@ -239,13 +241,13 @@ select * from users_sink;
 
 1. **Schema Evolution:**
     - Add a new column to the `userprofiles` table (e.g., `age`), insert data, and observe how the connector handles it.
+    - `ALTER TABLE userprofiles ADD email varchar(255);`
 2. **Connector Failure:**
     - What if you restart the `postgres` container?
     - `sudo docker restart postgres`
 3. **Custom SMT Challenge:**
     - Implement an SMT to dynamically rename topics with a timestamp suffix.
-4. **Can you rewind the data ingestion in source connector?**
-    - You may need to change the offset.
-5. **Test timestamp only mode and incremental only mode**
+    - https://docs.confluent.io/kafka-connectors/transforms/current/overview.html
+4. **Test timestamp only mode and incremental only mode**
     - Compare the differences between the different modes.
 
