@@ -110,8 +110,8 @@ CREATE TABLE customers (
     id SERIAL PRIMARY KEY,
     name VARCHAR(50),
     email VARCHAR(50),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not NULL
 );
 -- Create the trigger function to auto-update the updated_at field
 CREATE OR REPLACE FUNCTION update_updated_at_column()
