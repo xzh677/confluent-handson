@@ -100,7 +100,7 @@ SHOW wal_level;
 
 **Step 3:** Create a new database and user for CDC
 ```sql
-CREATE DATABASE cdctest OWNER cdcuser;
+CREATE DATABASE cdctest;
 ```
 
 **Step 4:** Connect to the `cdctest` database and create a table
