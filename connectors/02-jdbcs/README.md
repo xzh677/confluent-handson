@@ -50,27 +50,18 @@ create database jdbctest;
 
 **Step 4:** Create initial table and insert data in `jdbctest` database:
 ```sql
+-- Drop table
+-- DROP TABLE userprofiles;
+
 -- Create the userprofiles table with created_at and updated_at fields
 CREATE TABLE userprofiles (
     id SERIAL PRIMARY KEY,
     name VARCHAR(50),
     email VARCHAR(50),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not NULL
 );
 
--- Insert initial data
-INSERT INTO userprofiles (name, email) 
-VALUES 
-('Alice', 'alice@example.com'), 
-('Bob', 'bob@example.com');
-
--- Select data to verify insertion
-SELECT * FROM userprofiles;
-```
-
-Then, let's create a Postgres function and trigger to change the `updated_at` when there is a change to your data:
-```sql
 -- Create the trigger function to auto-update the updated_at field
 CREATE OR REPLACE FUNCTION update_updated_at_column()
 RETURNS TRIGGER AS $$
@@ -85,6 +76,16 @@ CREATE TRIGGER update_users_updated_at
 BEFORE UPDATE ON userprofiles
 FOR EACH ROW
 EXECUTE PROCEDURE update_updated_at_column();
+
+-- Insert initial data
+INSERT INTO userprofiles (name, email) 
+VALUES 
+('Alice', 'alice@example.com'), 
+('Bob', 'bob@example.com');
+
+-- Select data to verify insertion
+SELECT * FROM userprofiles;
+
 ```
 
 This trigger allows the `updated_at` uses the latest timestamp when there is a change being made. 
