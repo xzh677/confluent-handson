@@ -195,6 +195,8 @@ ON
     u.userid = p.userid;
 ```
 
+Flink Kafka Connector: https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/kafka/
+
 ---
 
 ### **3. Aggregation and Counting**
@@ -236,4 +238,6 @@ FROM pageviews
 GROUP BY pageid;
 ```
 ---
+
+Flink Upser Kafka Connector: [https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/kafka/](https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/table/upsert-kafka/)
 
