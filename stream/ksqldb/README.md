@@ -98,7 +98,7 @@ CREATE TABLE users_table (
 );
 
 -- Create stream for users
-CREATE TABLE users_stream (
+CREATE STREAM users_stream (
     registertime BIGINT,
     userid VARCHAR,
     regionid VARCHAR,
